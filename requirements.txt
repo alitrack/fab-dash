@@ -1,0 +1,7 @@
+flask-appbuilder
+pyarrow 
+fastparquet 
+duckdb-engine 
+panel
+gunicorn
+hvplot
