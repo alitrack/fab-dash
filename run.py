@@ -11,8 +11,7 @@ import panel as pn
 from tornado.httpserver import HTTPServer
 from tornado.ioloop import IOLoop
 
-from app import sockets,app,apps
-
+from app import sockets,app,apps,appbuilder
 
 
 def bk_worker():
@@ -40,11 +39,11 @@ if __name__ == "__main__":
     print()
     print("will start the app on four processes")
     app.run(host="0.0.0.0", port=8000, debug=True)
-    import sys
+#     import sys
 
-    sys.exit()
+#     sys.exit()
 
-
+# apps['fab']=appbuilder
 # pn.serve(apps,
 #         port=8000, allow_websocket_origin=["127.0.0.1:8000"],
 #          address="127.0.0.1", show=False)

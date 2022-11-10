@@ -133,3 +133,4 @@ app.db
 data/*
 bak
 apps/main.py
+other

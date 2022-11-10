@@ -4,7 +4,7 @@ from glob import glob
 from bokeh.server.util import bind_sockets
 from flask import Flask
 from flask_appbuilder import AppBuilder, SQLA
-from bokeh.command.util import build_single_handler_applications
+from bokeh.command.util import build_single_handler_applications,build_single_handler_application
 """
  Logging configuration
 """
@@ -21,4 +21,9 @@ sockets, port = bind_sockets("127.0.0.1", 0)
 
 files = glob("apps/*.py")
 apps = build_single_handler_applications(files)
+
+hvplot= build_single_handler_application("hvplot_apps/hvpexplorer.py")
+apps['/hvplot'] = hvplot
+
+
 from . import views, error_handler  # noqa
